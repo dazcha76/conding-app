@@ -4,6 +4,32 @@ export const REQUIREMENTS = {
   chrome: {
     flutter: '',
   },
+  project: {
+    flutter: {
+      lint: {
+        flutter: {
+          file: 'analysis_options.yaml',
+          catergory: {
+            linter: {
+              placement: 'rules',
+              text: [
+                'prefer_const_constructors: true',
+                'prefer_const_literals_to_create_immutables: true',
+              ],
+              details:
+                "Suggests where to put \'const\' in widgets and collections for cleaner, faster code.",
+            },
+            formatter: {
+              placement: '',
+              text: ['trailing_commas: preserve'],
+              details:
+                'Automatically formats widgets into multiple lines, making the code easier to read',
+            },
+          },
+        },
+      },
+    },
+  },
   sdk: {
     flutter: {
       install: 'https://docs.flutter.dev/install/quick',
@@ -28,28 +54,6 @@ export const REQUIREMENTS = {
       flutter: {
         name: 'Flutter by Dart Code',
         link: 'https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter',
-      },
-    },
-    lint: {
-      flutter: {
-        file: 'analysis_options.yaml',
-        catergory: {
-          linter: {
-            placement: 'rules',
-            text: [
-              'prefer_const_constructors: true',
-              'prefer_const_literals_to_create_immutables: true',
-            ],
-            details:
-              "Suggest where to put \'const\' in widgets and collections for cleaner, faster code.",
-          },
-          formatter: {
-            placement: '',
-            text: ['trailing_commas: preserve'],
-            details:
-              'Automatically formats widgets into multiple lines, making the code easier to read',
-          },
-        },
       },
     },
   },
