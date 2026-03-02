@@ -1,0 +1,19 @@
+<h1>Learn</h1>
+
+<mat-form-field>
+  <mat-label>Framework</mat-label>
+  <mat-select>
+    @for (framework of frameworks; track framework) {
+      <mat-option [value]="framework.value">{{ framework.viewValue }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Category</mat-label>
+  <mat-select>
+    @for (category of categories; track category) {
+      <mat-option [value]="category.value">{{ category.viewValue }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
