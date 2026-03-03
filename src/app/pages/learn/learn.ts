@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SelectModule } from 'primeng/select';
+import { Card } from '../../components/card/card';
 
 interface Dropdown {
   code: string;
@@ -9,7 +10,7 @@ interface Dropdown {
 
 @Component({
   selector: 'app-learn',
-  imports: [FormsModule, SelectModule],
+  imports: [Card, FormsModule, SelectModule],
   templateUrl: './learn.html',
   styleUrl: './learn.scss',
 })
