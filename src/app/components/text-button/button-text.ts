@@ -9,10 +9,9 @@ import { ButtonModule } from 'primeng/button';
 })
 export class ButtonText {
   options = input<any[]>();
-  selected: string | undefined = undefined;
   selectedButton = output<string>();
 
-  onSelect(event: string) {
-    this.selectedButton.emit(event);
+  onSelect(language: string) {
+    this.selectedButton.emit(language);
   }
 }

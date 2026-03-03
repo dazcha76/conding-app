@@ -3,6 +3,10 @@
 Choose a language/framework:
 <app-button-text [options]="buttonOptions" (selectedButton)="onSelectLanguage($event)" />
 
-<app-dropdown [options]="categoryOptions" (selectedOption)="onSelectedCategory($event)" />
+@if (selectedLanguage) {
+  <app-dropdown [options]="categoryOptions" (selectedOption)="onSelectedCategory($event)" />
+}
 
-<app-card />
+@if (selectedCategory) {
+  <app-card />
+}

@@ -4,6 +4,12 @@ import { SelectModule } from 'primeng/select';
 import { ButtonText } from '../../components/text-button/button-text';
 import { Card } from '../../components/card/card';
 import { Dropdown } from '../../components/dropdown/dropdown';
+import { CATEGORIES } from '../../constants/options';
+
+interface Options {
+  name: string;
+  code: string;
+}
 
 @Component({
   selector: 'app-learn',
@@ -12,20 +18,16 @@ import { Dropdown } from '../../components/dropdown/dropdown';
   styleUrl: './learn.scss',
 })
 export class Learn {
-  categoryOptions = [
-    { code: 'requirements', name: 'Requirements' },
-    { code: 'commands', name: 'Commands' },
-    { code: 'functions', name: 'Functions' },
-    { code: 'variables', name: 'Variables' },
-  ];
-
+  selectedLanguage = '';
+  selectedCategory = '';
   buttonOptions = [{ code: 'flutter', name: 'Flutter' }];
+  categoryOptions: Options[] = CATEGORIES;
 
-  onSelectLanguage(event: Event) {
-    console.log('language: ', event);
+  onSelectLanguage(event: string) {
+    this.selectedLanguage = event;
   }
 
   onSelectedCategory(event: string) {
-    console.log('category: ', event);
+    this.selectedCategory = event;
   }
 }
