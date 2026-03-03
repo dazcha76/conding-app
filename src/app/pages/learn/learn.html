@@ -1,1 +1,21 @@
-<h1>Learn</h1>
+<h2>Learn</h2>
+
+<div class="card flex justify-center">
+  <p-select
+    [options]="frameworks"
+    [(ngModel)]="selectedFramework"
+    optionLabel="name"
+    placeholder="Select a Framework"
+    class="w-full md:w-56"
+    [showClear]="true"
+  />
+
+  <p-select
+    [options]="categories"
+    [(ngModel)]="selectedCategory"
+    optionLabel="name"
+    placeholder="Select a Category"
+    class="w-full md:w-56"
+    [showClear]="true"
+  />
+</div>
