@@ -5,11 +5,6 @@ import { ButtonText } from '../../components/text-button/button-text';
 import { Card } from '../../components/card/card';
 import { Dropdown } from '../../components/dropdown/dropdown';
 
-// interface Dropdown {
-//   code: string;
-//   name: string;
-// }
-
 @Component({
   selector: 'app-learn',
   imports: [ButtonText, Card, Dropdown, FormsModule, SelectModule],
@@ -17,14 +12,20 @@ import { Dropdown } from '../../components/dropdown/dropdown';
   styleUrl: './learn.scss',
 })
 export class Learn {
-  options = [
+  categoryOptions = [
     { code: 'requirements', name: 'Requirements' },
     { code: 'commands', name: 'Commands' },
     { code: 'functions', name: 'Functions' },
     { code: 'variables', name: 'Variables' },
   ];
 
-  onSelectedCategory(event: String) {
-    console.log('received: ', event);
+  buttonOptions = [{ code: 'flutter', name: 'Flutter' }];
+
+  onSelectLanguage(event: Event) {
+    console.log('language: ', event);
+  }
+
+  onSelectedCategory(event: string) {
+    console.log('category: ', event);
   }
 }

@@ -15,10 +15,10 @@ interface Options {
 })
 export class Dropdown {
   options = input<Options[]>([]);
-  selectedOption: Options | undefined = undefined;
-  selected = output<string>();
+  selected: Options | undefined = undefined;
+  selectedOption = output<string>();
 
   onSelect(event: SelectChangeEvent) {
-    this.selected.emit(event.value.name);
+    this.selectedOption.emit(event.value.name);
   }
 }

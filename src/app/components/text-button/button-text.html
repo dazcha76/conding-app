@@ -1,6 +1,10 @@
 <div class="card flex flex-wrap gap-4 justify-center">
-  <p-button label="Angular" severity="info" />
-  <p-button label="Flutter" severity="info" />
-  <p-button label="JacaScript" variant="text" severity="info" />
-  <p-button label="React" variant="text" severity="info" />
+  @for (option of options(); track option.code) {
+    <p-button
+      [label]="option.name"
+      variant="text"
+      severity="info"
+      (onClick)="onSelect(option.name)"
+    />
+  }
 </div>
