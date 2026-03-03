@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SelectModule } from 'primeng/select';
+import { ButtonText } from '../../components/text-button/button-text';
 import { Card } from '../../components/card/card';
 
 interface Dropdown {
@@ -10,7 +11,7 @@ interface Dropdown {
 
 @Component({
   selector: 'app-learn',
-  imports: [Card, FormsModule, SelectModule],
+  imports: [ButtonText, Card, FormsModule, SelectModule],
   templateUrl: './learn.html',
   styleUrl: './learn.scss',
 })
