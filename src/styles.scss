@@ -18,5 +18,9 @@ body {
   width: 90%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 50px 20px;
+  padding: 20px;
+}
+
+.p-card-body {
+  gap: 20px !important;
 }

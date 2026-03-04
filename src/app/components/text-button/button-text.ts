@@ -5,7 +5,6 @@ import { ButtonModule } from 'primeng/button';
   selector: 'app-button-text',
   imports: [ButtonModule],
   templateUrl: './button-text.html',
-  standalone: true,
 })
 export class ButtonText {
   options = input<any[]>();

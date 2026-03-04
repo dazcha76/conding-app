@@ -1,12 +1,22 @@
-<h2>Learn</h2>
+<div class="container">
+  <h2>Learn</h2>
 
-Choose a language/framework:
-<app-button-text [options]="buttonOptions" (selectedButton)="onSelectLanguage($event)" />
+  <p>Choose a language/framework:</p>
 
-@if (selectedLanguage) {
-  <app-dropdown [options]="categoryOptions" (selectedOption)="onSelectedCategory($event)" />
-}
+  <app-button-text [options]="languageOptions" (selectedButton)="onSelectLanguage($event)" />
 
-@if (selectedCategory) {
-  <app-card />
-}
+  @if (selectedLanguage) {
+    <app-dropdown [options]="categoryOptions" (selectedOption)="onSelectedCategory($event)" />
+  }
+
+  @if (selectedCategory()) {
+    <app-dropdown
+      [options]="subCategoryOptions()"
+      (selectedOption)="onSelectedSubCategory($event)"
+    />
+  }
+
+  @if (selectedSubCategory()) {
+    <app-card [cardTitle]="cardTitle()" [cardSubtitle]="cardSubTitle()" [cardBody]="cardBody()" />
+  }
+</div>
