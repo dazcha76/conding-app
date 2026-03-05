@@ -29,13 +29,13 @@ export class Learn {
   cardSubTitle = signal<string>('');
   cardBody = signal<string>('');
 
-  languageOptions = signal(FRONTEND_STACK.map((l) => ({ code: l.id, name: l.name })));
+  languageOptions = signal(
+    FRONTEND_STACK.map((language) => ({ code: language.id, name: language.name })),
+  );
   categoryOptions = CATEGORIES;
   frameworkOptions = computed<Options[]>(() => {
     const selectedLanguage = this.selectedLanguage();
-
-    const languages = FRONTEND_STACK.find((lang) => lang.name === selectedLanguage);
-
+    const languages = FRONTEND_STACK.find((language) => language.name === selectedLanguage);
     return (
       languages?.frameworks.map((framework) => ({
         code: framework.id,
@@ -67,11 +67,11 @@ export class Learn {
     this.selectedSubCategory.set(event);
 
     const subCategoryKey = this.selectedSubCategory().toLowerCase() as keyof typeof COMMANDS;
-    const languageKey =
-      this.selectedLanguage().toLowerCase() as keyof (typeof COMMANDS)[typeof subCategoryKey];
+    const frameworkKey =
+      this.selectedFramework().toLowerCase() as keyof (typeof COMMANDS)[typeof subCategoryKey];
 
     this.cardTitle.set(this.selectedSubCategory());
     this.cardSubTitle.set('');
-    this.cardBody.set(COMMANDS[subCategoryKey][languageKey]);
+    this.cardBody.set(COMMANDS[subCategoryKey][frameworkKey]);
   }
 }
