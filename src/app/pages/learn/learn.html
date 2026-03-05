@@ -1,11 +1,15 @@
 <div class="container">
   <h2>Learn</h2>
 
-  <p>Choose a language/framework:</p>
+  <p>Select a language:</p>
+  <app-button [options]="languageOptions()" (selectedButton)="onSelectLanguage($event)" />
 
-  <app-button-text [options]="languageOptions" (selectedButton)="onSelectLanguage($event)" />
+  @if (selectedLanguage() && selectedLanguage() !== 'TypeScript') {
+    <p>Select a framework:</p>
+    <app-button [options]="frameworkOptions()" (selectedButton)="onSelectFramework($event)" />
+  }
 
-  @if (selectedLanguage) {
+  @if (selectedFramework() || selectedLanguage() === 'TypeScript') {
     <app-dropdown [options]="categoryOptions" (selectedOption)="onSelectedCategory($event)" />
   }
 

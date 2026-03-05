@@ -1,11 +1,12 @@
 import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SelectModule } from 'primeng/select';
-import { ButtonText } from '../../components/text-button/button-text';
+import { Button } from '../../components/button/button';
 import { Card } from '../../components/card/card';
 import { Dropdown } from '../../components/dropdown/dropdown';
 import { CATEGORIES, SUBCATEGORIES } from '../../constants/options';
 import { COMMANDS } from '../../constants/commands';
+import { FRONTEND_STACK } from '../../constants/languages/frontend';
 
 interface Options {
   name: string;
@@ -14,12 +15,13 @@ interface Options {
 
 @Component({
   selector: 'app-learn',
-  imports: [ButtonText, Card, Dropdown, FormsModule, SelectModule],
+  imports: [Button, Card, Dropdown, FormsModule, SelectModule],
   templateUrl: './learn.html',
   styleUrl: './learn.scss',
 })
 export class Learn {
-  selectedLanguage = '';
+  selectedLanguage = signal<string>('');
+  selectedFramework = signal<string>('');
   selectedCategory = signal<string>('');
   selectedSubCategory = signal<string>('');
 
@@ -27,11 +29,20 @@ export class Learn {
   cardSubTitle = signal<string>('');
   cardBody = signal<string>('');
 
-  languageOptions = [
-    { code: 'angular', name: 'Angular' },
-    { code: 'flutter', name: 'Flutter' },
-  ];
+  languageOptions = signal(FRONTEND_STACK.map((l) => ({ code: l.id, name: l.name })));
   categoryOptions = CATEGORIES;
+  frameworkOptions = computed<Options[]>(() => {
+    const selectedLanguage = this.selectedLanguage();
+
+    const languages = FRONTEND_STACK.find((lang) => lang.name === selectedLanguage);
+
+    return (
+      languages?.frameworks.map((framework) => ({
+        code: framework.id,
+        name: framework.name,
+      })) || []
+    );
+  });
 
   subCategoryOptions = computed(() => {
     const category = this.selectedCategory();
@@ -39,7 +50,13 @@ export class Learn {
   });
 
   onSelectLanguage(event: string) {
-    this.selectedLanguage = event;
+    this.selectedLanguage.set(event);
+    this.selectedCategory.set('');
+    this.selectedSubCategory.set('');
+  }
+
+  onSelectFramework(event: string) {
+    this.selectedFramework.set(event);
   }
 
   onSelectedCategory(event: string) {
@@ -51,7 +68,7 @@ export class Learn {
 
     const subCategoryKey = this.selectedSubCategory().toLowerCase() as keyof typeof COMMANDS;
     const languageKey =
-      this.selectedLanguage.toLowerCase() as keyof (typeof COMMANDS)[typeof subCategoryKey];
+      this.selectedLanguage().toLowerCase() as keyof (typeof COMMANDS)[typeof subCategoryKey];
 
     this.cardTitle.set(this.selectedSubCategory());
     this.cardSubTitle.set('');

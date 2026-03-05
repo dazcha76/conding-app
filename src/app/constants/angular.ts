@@ -70,5 +70,19 @@ export const ANGULAR = {
         },
       },
     },
+    both: {
+      details: 'A writable signal that acts as both an input and an output simultaneously.',
+      version: 'v17.2',
+      parent: {
+        code: '<app-dropdown [(selected)]="myValue" />',
+        details:
+          'Since model() creates that automatic output, the parent can now use simple two-way binding.',
+      },
+      child: {
+        code: "selected = model<string>('') // Creates an Input + an Output named 'selectedChange' \n [(ngModel)]='selected'",
+        details:
+          'It automatically creates an output named [propertyName]Change for you. \n Unlike a standard input(), you can call .set() or .update() on it directly.',
+      },
+    },
   },
 };

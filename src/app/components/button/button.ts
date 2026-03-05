@@ -1,12 +1,12 @@
-import { Component, input, output } from '@angular/core';
+import { Component, effect, input, output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 
 @Component({
-  selector: 'app-button-text',
+  selector: 'app-button',
   imports: [ButtonModule],
-  templateUrl: './button-text.html',
+  templateUrl: './button.html',
 })
-export class ButtonText {
+export class Button {
   options = input<any[]>();
   selectedButton = output<string>();
 

@@ -1,3 +1,23 @@
+export const PROGRAMMING_LANGUAGES = [
+  {
+    name: 'JavaScript',
+    id: 'javascript',
+    frameworks: [
+      { name: 'Angular', id: 'angular' },
+      { name: 'React', id: 'react' },
+      // { name: 'Vue', id: 'vue' },
+    ],
+  },
+  {
+    name: 'Dart',
+    id: 'dart',
+    frameworks: [
+      // { name: 'Angel', id: 'angel' }
+      { name: 'Flutter', id: 'flutter' },
+    ],
+  },
+];
+
 export const CATEGORIES = [
   { code: 'requirements', name: 'Requirements' },
   { code: 'commands', name: 'Commands' },
