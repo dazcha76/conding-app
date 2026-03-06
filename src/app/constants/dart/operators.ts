@@ -1,0 +1,126 @@
+import { Category } from '../../models/models';
+
+export const DART_OPERATORS: Record<string, Category> = {
+  equality: {
+    title: 'Equality and relational operators',
+    documentation: 'https://dart.dev/language/operators#equality-and-relational-operators',
+    items: [
+      {
+        id: 'loose-equal',
+        documentation: '',
+        name: 'Equality',
+        code: '',
+        example: '',
+        output: '',
+        bullets: ['Dart does not support type coercion'],
+      },
+      {
+        id: 'strict-equal',
+        documentation: '',
+        name: 'Equality',
+        code: '==',
+        example: '2 == 2',
+        output: '// returns true',
+        bullets: [
+          'Checks whether its two operands are equal (value and type), returning a Boolean result',
+          'Checks the content of arrays:\n[1, 2, 3] == [1, 2, 3] // returns true',
+        ],
+      },
+      {
+        id: 'loose-not-equal',
+        documentation: '',
+        name: 'Inequality',
+        code: '',
+        example: '',
+        output: '',
+        bullets: ['Dart does not support type coercion'],
+      },
+      {
+        id: 'strict-not-equal',
+        documentation: '',
+        name: 'Inequality',
+        code: '!=',
+        example: '3 != 2',
+        output: '// returns true',
+        bullets: ['Checks whether its two operands are not equal, returning a Boolean result'],
+      },
+      {
+        id: 'greater-than',
+        documentation: '',
+        name: 'Greater than',
+        code: '>',
+        example: '3 > 2',
+        output: '// returns true',
+        bullets: [
+          'Returns true if the left operand is greater than the right operand, and false otherwise',
+        ],
+      },
+      {
+        id: 'less-than',
+        documentation: '',
+        name: 'Less than',
+        code: '<',
+        example: '3 < 2',
+        output: '// returns false',
+        bullets: [
+          'Returns true if the left operand is less than the right operand, and false otherwise',
+        ],
+      },
+      {
+        id: 'greater-or-equal',
+        documentation: '',
+        name: 'Greater than or equal',
+        code: '>=',
+        example: '3 >= 3',
+        output: '// returns true',
+        bullets: [
+          'Returns true if the left operand is greater than or equal to the right operand, and false otherwise',
+        ],
+      },
+      {
+        id: 'less-or-equal',
+        documentation: '',
+        name: 'Less than or equal',
+        code: '<=',
+        example: '3 <= 2',
+        output: '// returns false',
+        bullets: [
+          'Returns true if the left operand is less than or equal to the right operand, and false otherwise',
+        ],
+      },
+    ],
+  },
+  logical: {
+    title: 'Logical operators',
+    documentation: 'https://dart.dev/language/operators#logical-operators',
+    items: [
+      {
+        id: 'not',
+        documentation: '',
+        name: 'Logical NOT',
+        code: '!',
+        example: '!true',
+        output: '// returns false',
+        bullets: ['Inverts the expression that follows (changes false to true, and vice versa)'],
+      },
+      {
+        id: 'or',
+        documentation: '',
+        name: 'Logical OR',
+        code: '||',
+        example: 'true || false',
+        output: '// returns true',
+        bullets: ['Returns true if one or more of its operands is true, and false otherwise '],
+      },
+      {
+        id: 'and',
+        documentation: '',
+        name: 'Logical AND',
+        code: '&&',
+        example: 'true && false',
+        output: '// returns false',
+        bullets: ['It will be true if all the operands are true. Otherwise it will be false'],
+      },
+    ],
+  },
+};

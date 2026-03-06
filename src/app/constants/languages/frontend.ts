@@ -17,13 +17,13 @@ export const FRONTEND_STACK = [
       // { name: 'Vue.js', id: 'vue' },
     ],
   },
-  {
-    name: 'TypeScript',
-    id: 'typescript',
-    frameworks: [
-      // { name: 'Angular', id: 'angular-ts' },
-      // { name: 'Lit', id: 'lit' },
-      // { name: 'Next.js', id: 'nextjs' }, // FULLSTACK FRAMEWORK
-    ],
-  },
+  // {
+  // name: 'TypeScript',
+  // id: 'typescript',
+  // frameworks: [
+  // { name: 'Angular', id: 'angular-ts' },
+  // { name: 'Lit', id: 'lit' },
+  // { name: 'Next.js', id: 'nextjs' }, // FULLSTACK FRAMEWORK
+  // ],
+  // },
 ];

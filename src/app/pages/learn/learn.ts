@@ -37,7 +37,7 @@ export class Learn {
     const selectedLanguage = this.selectedLanguage();
     const languages = FRONTEND_STACK.find((language) => language.name === selectedLanguage);
     return (
-      languages?.frameworks.map((framework) => ({
+      languages?.frameworks?.map((framework) => ({
         code: framework.id,
         name: framework.name,
       })) || []
