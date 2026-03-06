@@ -3,13 +3,13 @@ export interface Options {
   code: string;
 }
 
-export interface Category {
+export interface Topic {
   title: string;
   link: string;
-  items: Record<string, CategoryItems>;
+  items: Record<string, TopicItems>;
 }
 
-export interface CategoryItems {
+export interface TopicItems {
   id: string;
   link: string;
   name: string;

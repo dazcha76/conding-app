@@ -11,10 +11,3 @@ export const TOPICS: Options[] = [
   // { code: 'routing', name: 'Routing' },
   // { code: 'http', name: 'HTTP' },
 ];
-
-// export const SUBCATEGORIES = {
-//   commands: [
-//     { code: 'create', name: 'Create' },
-//     { code: 'run', name: 'Run' },
-//   ],
-// };

@@ -1,5 +1,6 @@
-import { Component, effect, input, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
+import { ProgrammingLanguage } from '../../constants';
 
 @Component({
   selector: 'app-button',
@@ -8,9 +9,9 @@ import { ButtonModule } from 'primeng/button';
 })
 export class Button {
   options = input<any[]>();
-  selectedButton = output<string>();
+  selectedButton = output<ProgrammingLanguage>();
 
-  onSelect(language: string) {
+  onSelect(language: ProgrammingLanguage) {
     this.selectedButton.emit(language);
   }
 }

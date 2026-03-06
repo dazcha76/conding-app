@@ -1,13 +1,13 @@
-import { Category } from '../../models/models';
+import { Topic } from '../../models/models';
 
-export const DART_OPERATORS: Record<string, Category> = {
+export const DART_OPERATORS: Record<string, Topic> = {
   equality: {
     title: 'Equality and relational operators',
     link: 'https://dart.dev/language/operators#equality-and-relational-operators',
     items: {
       'loose-equal': {
         id: 'loose-equal',
-        link: '',
+        link: 'https://dart.dev/language/operators#equality-and-relational-operators',
         name: 'Equality',
         code: '',
         example: '',
@@ -16,7 +16,7 @@ export const DART_OPERATORS: Record<string, Category> = {
       },
       'strict-equal': {
         id: 'strict-equal',
-        link: '',
+        link: 'https://dart.dev/language/operators#equality-and-relational-operators',
         name: 'Equality',
         code: '==',
         example: '2 == 2',
@@ -28,7 +28,7 @@ export const DART_OPERATORS: Record<string, Category> = {
       },
       'loose-not-equal': {
         id: 'loose-not-equal',
-        link: '',
+        link: 'https://dart.dev/language/operators#equality-and-relational-operators',
         name: 'Inequality',
         code: '',
         example: '',
@@ -37,7 +37,7 @@ export const DART_OPERATORS: Record<string, Category> = {
       },
       'strict-not-equal': {
         id: 'strict-not-equal',
-        link: '',
+        link: 'https://dart.dev/language/operators#equality-and-relational-operators',
         name: 'Inequality',
         code: '!=',
         example: '3 != 2',
@@ -46,7 +46,7 @@ export const DART_OPERATORS: Record<string, Category> = {
       },
       'greater-than': {
         id: 'greater-than',
-        link: '',
+        link: 'https://dart.dev/language/operators#equality-and-relational-operators',
         name: 'Greater than',
         code: '>',
         example: '3 > 2',
@@ -57,7 +57,7 @@ export const DART_OPERATORS: Record<string, Category> = {
       },
       'less-than': {
         id: 'less-than',
-        link: '',
+        link: 'https://dart.dev/language/operators#equality-and-relational-operators',
         name: 'Less than',
         code: '<',
         example: '3 < 2',
@@ -68,7 +68,7 @@ export const DART_OPERATORS: Record<string, Category> = {
       },
       'greater-or-equal': {
         id: 'greater-or-equal',
-        link: '',
+        link: 'https://dart.dev/language/operators#equality-and-relational-operators',
         name: 'Greater than or equal',
         code: '>=',
         example: '3 >= 3',
@@ -79,7 +79,7 @@ export const DART_OPERATORS: Record<string, Category> = {
       },
       'less-or-equal': {
         id: 'less-or-equal',
-        link: '',
+        link: 'https://dart.dev/language/operators#equality-and-relational-operators',
         name: 'Less than or equal',
         code: '<=',
         example: '3 <= 2',
@@ -96,7 +96,7 @@ export const DART_OPERATORS: Record<string, Category> = {
     items: {
       not: {
         id: 'not',
-        link: '',
+        link: 'https://dart.dev/language/operators#logical-operators',
         name: 'Logical NOT',
         code: '!',
         example: '!true',
@@ -105,7 +105,7 @@ export const DART_OPERATORS: Record<string, Category> = {
       },
       or: {
         id: 'or',
-        link: '',
+        link: 'https://dart.dev/language/operators#logical-operators',
         name: 'Logical OR',
         code: '||',
         example: 'true || false',
@@ -114,7 +114,7 @@ export const DART_OPERATORS: Record<string, Category> = {
       },
       and: {
         id: 'and',
-        link: '',
+        link: 'https://dart.dev/language/operators#logical-operators',
         name: 'Logical AND',
         code: '&&',
         example: 'true && false',

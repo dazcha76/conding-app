@@ -1,4 +1,4 @@
-<div class="container">
+<div class="row-layout">
   <h2>Learn</h2>
 
   <p>Select a language:</p>
@@ -14,10 +14,10 @@
   }
 
   @if (selectedTopic()) {
-    <app-dropdown [options]="subtopicOptions()" (selectedOption)="onSelectSubtopic($event)" />
+    <app-dropdown [options]="subTopicOptions()" (selectedOption)="onSelectSubTopic($event)" />
   }
 
-  @if (selectedSubtopic()) {
+  @if (selectedSubTopic()) {
     <app-dropdown [options]="itemOptions()" (selectedOption)="onSelectItem($event)" />
   }
 

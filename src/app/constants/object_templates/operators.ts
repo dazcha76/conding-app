@@ -1,8 +1,6 @@
-// Avoid == as it performs unpredictable type coercion.
+import { Topic } from '../../models/models';
 
-import { Category } from '../../models/models';
-
-export const LANGUAGE_OPERATORS: Record<string, Category> = {
+export const LANGUAGE_OPERATORS: Record<string, Topic> = {
   equality: {
     title: 'Equality and relational operators',
     link: '',

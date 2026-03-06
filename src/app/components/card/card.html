@@ -1,24 +1,31 @@
 <div class="mb-4 flex items-center justify-center">
-  <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+  <p-card class="border" [style]="{ width: '25rem', overflow: 'hidden' }">
     <ng-template #title> {{ cardData().name }} </ng-template>
 
-    <p>{{ cardData().code }}</p>
-    <p>{{ cardData().example }}</p>
-    <p>{{ cardData().output }}</p>
-    @for (item of cardData().bullets; track $index) {
-      <p [innerText]="item"></p>
-    }
+    <div class="row-layout">
+      <div class="row-layout border code-block">
+        <pre><code>{{ cardData().code }}</code></pre>
+
+        <div class="two-column-layout">
+          <p>{{ cardData().example }}</p>
+          <p>{{ cardData().output }}</p>
+        </div>
+      </div>
+
+      @for (item of cardData().bullets; track $index) {
+        <p [innerText]="item"></p>
+      }
+    </div>
 
     <ng-template #footer>
       <div class="flex gap-4 mt-1">
-        <!-- <p-button
-          label="Cancel"
+        <p-button
+          label="Read more"
           severity="info"
           class="w-full"
-          [outlined]="true"
           styleClass="w-full"
-        /> -->
-        <p-button label="Save" severity="info" class="w-full" styleClass="w-full" />
+          (onClick)="openLink(cardData().link)"
+        />
       </div>
     </ng-template>
   </p-card>

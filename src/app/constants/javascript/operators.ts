@@ -1,6 +1,6 @@
-import { Category } from '../../models/models';
+import { Topic } from '../../models/models';
 
-export const JAVASCRIPT_OPERATORS: Record<string, Category> = {
+export const JAVASCRIPT_OPERATORS: Record<string, Topic> = {
   equality: {
     title: 'Equality and relational operators',
     link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators',
