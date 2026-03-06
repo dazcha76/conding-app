@@ -6,8 +6,8 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
   equality: {
     title: 'Equality and relational operators',
     documentation: '',
-    items: [
-      {
+    items: {
+      'loose-equal': {
         id: 'loose-equal',
         documentation: '',
         name: '',
@@ -16,7 +16,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: [],
       },
-      {
+      'strict-equal': {
         id: 'strict-equal',
         documentation: '',
         name: '',
@@ -25,7 +25,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: [],
       },
-      {
+      'loose-not-equal': {
         id: 'loose-not-equal',
         documentation: '',
         name: '',
@@ -34,7 +34,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: [],
       },
-      {
+      'strict-not-equal': {
         id: 'strict-not-equal',
         documentation: '',
         name: '',
@@ -43,7 +43,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: [],
       },
-      {
+      'greater-than': {
         id: 'greater-than',
         documentation: '',
         name: '',
@@ -52,7 +52,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: [],
       },
-      {
+      'less-than': {
         id: 'less-than',
         documentation: '',
         name: '',
@@ -61,7 +61,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: [],
       },
-      {
+      'greater-or-equal': {
         id: 'greater-or-equal',
         documentation: '',
         name: '',
@@ -70,7 +70,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: [],
       },
-      {
+      'less-or-equal': {
         id: 'less-or-equal',
         documentation: '',
         name: '',
@@ -79,13 +79,13 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: [],
       },
-    ],
+    },
   },
   logical: {
     title: 'Logical operators',
     documentation: '',
-    items: [
-      {
+    items: {
+      not: {
         id: 'not',
         documentation: '',
         name: '',
@@ -94,7 +94,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: [],
       },
-      {
+      or: {
         id: 'or',
         documentation: '',
         name: '',
@@ -103,7 +103,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: [],
       },
-      {
+      and: {
         id: 'and',
         documentation: '',
         name: '',
@@ -112,6 +112,6 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: [],
       },
-    ],
+    },
   },
 };

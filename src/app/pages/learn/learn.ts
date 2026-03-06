@@ -4,14 +4,10 @@ import { SelectModule } from 'primeng/select';
 import { Button } from '../../components/button/button';
 import { Card } from '../../components/card/card';
 import { Dropdown } from '../../components/dropdown/dropdown';
-import { CATEGORIES, SUBCATEGORIES } from '../../constants/options';
-import { COMMANDS } from '../../constants/commands';
+import { TOPICS } from '../../constants/options';
 import { FRONTEND_STACK } from '../../constants/languages/frontend';
-
-interface Options {
-  name: string;
-  code: string;
-}
+import { Options } from '../../models/models';
+import { DART_OPERATORS } from '../../constants/dart/operators';
 
 @Component({
   selector: 'app-learn',
@@ -22,8 +18,9 @@ interface Options {
 export class Learn {
   selectedLanguage = signal<string>('');
   selectedFramework = signal<string>('');
-  selectedCategory = signal<string>('');
-  selectedSubCategory = signal<string>('');
+  selectedTopic = signal<string>('');
+  selectedSubtopic = signal<string>('');
+  selectedItem = signal<string>('');
 
   cardTitle = signal<string>('');
   cardSubTitle = signal<string>('');
@@ -32,7 +29,7 @@ export class Learn {
   languageOptions = signal(
     FRONTEND_STACK.map((language) => ({ code: language.id, name: language.name })),
   );
-  categoryOptions = CATEGORIES;
+
   frameworkOptions = computed<Options[]>(() => {
     const selectedLanguage = this.selectedLanguage();
     const languages = FRONTEND_STACK.find((language) => language.name === selectedLanguage);
@@ -44,34 +41,60 @@ export class Learn {
     );
   });
 
-  subCategoryOptions = computed(() => {
-    const category = this.selectedCategory();
-    return SUBCATEGORIES[category.toLowerCase() as keyof typeof SUBCATEGORIES] ?? [];
+  topicOptions = TOPICS;
+
+  subtopicOptions = computed(() => {
+    const keys = Object.keys(DART_OPERATORS) as Array<keyof typeof DART_OPERATORS>;
+
+    return (
+      keys.map((key) => ({
+        code: key.toLowerCase(),
+        name: DART_OPERATORS[key].title,
+      })) || []
+    );
+  });
+
+  itemOptions = computed(() => {
+    const subtopic = this.selectedSubtopic();
+
+    // const itemsToDisplay = Object.values(DART_OPERATORS[subtopic].items).filter(
+    //   (item) => item.code,
+    // );
+
+    const keys = Object.keys(DART_OPERATORS[subtopic].items) as Array<keyof typeof DART_OPERATORS>;
+
+    return (
+      keys.map((key) => ({
+        code: key,
+        name: DART_OPERATORS[subtopic].items[key].name,
+      })) || []
+    );
   });
 
   onSelectLanguage(event: string) {
     this.selectedLanguage.set(event);
-    this.selectedCategory.set('');
-    this.selectedSubCategory.set('');
+    this.selectedTopic.set('');
+    this.selectedSubtopic.set('');
   }
 
   onSelectFramework(event: string) {
     this.selectedFramework.set(event);
   }
 
-  onSelectedCategory(event: string) {
-    this.selectedCategory.set(event);
+  onSelectTopic(event: string) {
+    this.selectedTopic.set(event);
   }
 
-  onSelectedSubCategory(event: string) {
-    this.selectedSubCategory.set(event);
+  onSelectSubtopic(event: string) {
+    this.selectedSubtopic.set(event);
+  }
 
-    const subCategoryKey = this.selectedSubCategory().toLowerCase() as keyof typeof COMMANDS;
-    const frameworkKey =
-      this.selectedFramework().toLowerCase() as keyof (typeof COMMANDS)[typeof subCategoryKey];
+  onSelectItem(event: string) {
+    this.selectedItem.set(event);
+    const item = DART_OPERATORS[this.selectedSubtopic()].items[this.selectedItem()];
 
-    this.cardTitle.set(this.selectedSubCategory());
+    this.cardTitle.set(item.name);
     this.cardSubTitle.set('');
-    this.cardBody.set(COMMANDS[subCategoryKey][frameworkKey]);
+    this.cardBody.set(item.code);
   }
 }

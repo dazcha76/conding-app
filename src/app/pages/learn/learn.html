@@ -4,23 +4,24 @@
   <p>Select a language:</p>
   <app-button [options]="languageOptions()" (selectedButton)="onSelectLanguage($event)" />
 
-  @if (selectedLanguage() && selectedLanguage() !== 'TypeScript') {
+  <!-- @if (selectedLanguage()) {
     <p>Select a framework:</p>
     <app-button [options]="frameworkOptions()" (selectedButton)="onSelectFramework($event)" />
+  } -->
+
+  @if (selectedLanguage()) {
+    <app-dropdown [options]="topicOptions" (selectedOption)="onSelectTopic($event)" />
   }
 
-  @if (selectedFramework() || selectedLanguage() === 'TypeScript') {
-    <app-dropdown [options]="categoryOptions" (selectedOption)="onSelectedCategory($event)" />
+  @if (selectedTopic()) {
+    <app-dropdown [options]="subtopicOptions()" (selectedOption)="onSelectSubtopic($event)" />
   }
 
-  @if (selectedCategory()) {
-    <app-dropdown
-      [options]="subCategoryOptions()"
-      (selectedOption)="onSelectedSubCategory($event)"
-    />
+  @if (selectedSubtopic()) {
+    <app-dropdown [options]="itemOptions()" (selectedOption)="onSelectItem($event)" />
   }
 
-  @if (selectedSubCategory()) {
+  @if (selectedItem()) {
     <app-card [cardTitle]="cardTitle()" [cardSubtitle]="cardSubTitle()" [cardBody]="cardBody()" />
   }
 </div>

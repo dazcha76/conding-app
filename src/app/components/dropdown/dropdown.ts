@@ -31,6 +31,6 @@ export class Dropdown {
   // <app-dropdown [options]="myOptions" [(selected)]="myValue" />
 
   onSelect(event: SelectChangeEvent) {
-    this.selectedOption.emit(event.value.name);
+    this.selectedOption.emit(event.value.code);
   }
 }

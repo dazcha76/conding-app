@@ -1,16 +1,17 @@
 export const FRONTEND_STACK = [
   {
-    name: 'Dart',
     id: 'dart',
-    frameworks: [{ name: 'Flutter', id: 'flutter' }],
+    name: 'Dart',
+    frameworks: [{ id: 'flutter', name: 'Flutter' }],
   },
   {
-    name: 'JavaScript',
     id: 'javascript',
+    name: 'JavaScript',
     frameworks: [
-      { name: 'Angular', id: 'angular' },
+      { id: 'angular', name: 'Angular' },
+      // { id: 'nextjs', name: 'Next.js' }, // FULLSTACK FRAMEWORK
       // { name: 'Preact', id: 'preact' },
-      { name: 'React', id: 'react' },
+      { id: 'react', name: 'React' },
       // { name: 'Solid.js', id: 'solid' },
       // { name: 'Svelte', id: 'svelte' },
       // { name: 'Qwik', id: 'qwik' },
@@ -18,12 +19,11 @@ export const FRONTEND_STACK = [
     ],
   },
   // {
-  // name: 'TypeScript',
   // id: 'typescript',
+  // name: 'TypeScript',
   // frameworks: [
-  // { name: 'Angular', id: 'angular-ts' },
-  // { name: 'Lit', id: 'lit' },
-  // { name: 'Next.js', id: 'nextjs' }, // FULLSTACK FRAMEWORK
+  // { id: 'angular-ts', name: 'Angular' },
+  // { id: 'lit', name: 'Lit' },
   // ],
   // },
 ];

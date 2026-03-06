@@ -1,7 +1,12 @@
+export interface Options {
+  name: string;
+  code: string;
+}
+
 export interface Category {
   title: string;
   documentation: string;
-  items: CategoryItems[];
+  items: Record<string, CategoryItems>;
 }
 
 export interface CategoryItems {

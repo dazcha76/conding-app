@@ -4,8 +4,8 @@ export const DART_OPERATORS: Record<string, Category> = {
   equality: {
     title: 'Equality and relational operators',
     documentation: 'https://dart.dev/language/operators#equality-and-relational-operators',
-    items: [
-      {
+    items: {
+      'loose-equal': {
         id: 'loose-equal',
         documentation: '',
         name: 'Equality',
@@ -14,7 +14,7 @@ export const DART_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: ['Dart does not support type coercion'],
       },
-      {
+      'strict-equal': {
         id: 'strict-equal',
         documentation: '',
         name: 'Equality',
@@ -26,7 +26,7 @@ export const DART_OPERATORS: Record<string, Category> = {
           'Checks the content of arrays:\n[1, 2, 3] == [1, 2, 3] // returns true',
         ],
       },
-      {
+      'loose-not-equal': {
         id: 'loose-not-equal',
         documentation: '',
         name: 'Inequality',
@@ -35,7 +35,7 @@ export const DART_OPERATORS: Record<string, Category> = {
         output: '',
         bullets: ['Dart does not support type coercion'],
       },
-      {
+      'strict-not-equal': {
         id: 'strict-not-equal',
         documentation: '',
         name: 'Inequality',
@@ -44,7 +44,7 @@ export const DART_OPERATORS: Record<string, Category> = {
         output: '// returns true',
         bullets: ['Checks whether its two operands are not equal, returning a Boolean result'],
       },
-      {
+      'greater-than': {
         id: 'greater-than',
         documentation: '',
         name: 'Greater than',
@@ -55,7 +55,7 @@ export const DART_OPERATORS: Record<string, Category> = {
           'Returns true if the left operand is greater than the right operand, and false otherwise',
         ],
       },
-      {
+      'less-than': {
         id: 'less-than',
         documentation: '',
         name: 'Less than',
@@ -66,7 +66,7 @@ export const DART_OPERATORS: Record<string, Category> = {
           'Returns true if the left operand is less than the right operand, and false otherwise',
         ],
       },
-      {
+      'greater-or-equal': {
         id: 'greater-or-equal',
         documentation: '',
         name: 'Greater than or equal',
@@ -77,7 +77,7 @@ export const DART_OPERATORS: Record<string, Category> = {
           'Returns true if the left operand is greater than or equal to the right operand, and false otherwise',
         ],
       },
-      {
+      'less-or-equal': {
         id: 'less-or-equal',
         documentation: '',
         name: 'Less than or equal',
@@ -88,13 +88,13 @@ export const DART_OPERATORS: Record<string, Category> = {
           'Returns true if the left operand is less than or equal to the right operand, and false otherwise',
         ],
       },
-    ],
+    },
   },
   logical: {
     title: 'Logical operators',
     documentation: 'https://dart.dev/language/operators#logical-operators',
-    items: [
-      {
+    items: {
+      not: {
         id: 'not',
         documentation: '',
         name: 'Logical NOT',
@@ -103,7 +103,7 @@ export const DART_OPERATORS: Record<string, Category> = {
         output: '// returns false',
         bullets: ['Inverts the expression that follows (changes false to true, and vice versa)'],
       },
-      {
+      or: {
         id: 'or',
         documentation: '',
         name: 'Logical OR',
@@ -112,7 +112,7 @@ export const DART_OPERATORS: Record<string, Category> = {
         output: '// returns true',
         bullets: ['Returns true if one or more of its operands is true, and false otherwise '],
       },
-      {
+      and: {
         id: 'and',
         documentation: '',
         name: 'Logical AND',
@@ -121,6 +121,6 @@ export const DART_OPERATORS: Record<string, Category> = {
         output: '// returns false',
         bullets: ['It will be true if all the operands are true. Otherwise it will be false'],
       },
-    ],
+    },
   },
 };
