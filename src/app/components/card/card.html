@@ -1,30 +1,25 @@
 <div class="mb-4 flex items-center justify-center">
   <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
-    @if (cardImage()) {
-      <ng-template #header>
-        <img
-          alt="Card"
+    <ng-template #title> {{ cardData().name }} </ng-template>
+
+    <p>{{ cardData().code }}</p>
+    <p>{{ cardData().example }}</p>
+    <p>{{ cardData().output }}</p>
+    @for (item of cardData().bullets; track $index) {
+      <p [innerText]="item"></p>
+    }
+
+    <ng-template #footer>
+      <div class="flex gap-4 mt-1">
+        <!-- <p-button
+          label="Cancel"
+          severity="info"
           class="w-full"
-          src="https://primefaces.org/cdn/primeng/images/card-ng.jpg"
-        />
-      </ng-template>
-    }
-    <ng-template #title> {{ cardTitle() }} </ng-template>
-    <ng-template #subtitle> {{ cardSubtitle() }} </ng-template>
-    <p>{{ cardBody() }}</p>
-    @if (showFooter) {
-      <ng-template #footer>
-        <div class="flex gap-4 mt-1">
-          <p-button
-            label="Cancel"
-            severity="info"
-            class="w-full"
-            [outlined]="true"
-            styleClass="w-full"
-          />
-          <p-button label="Save" severity="info" class="w-full" styleClass="w-full" />
-        </div>
-      </ng-template>
-    }
+          [outlined]="true"
+          styleClass="w-full"
+        /> -->
+        <p-button label="Save" severity="info" class="w-full" styleClass="w-full" />
+      </div>
+    </ng-template>
   </p-card>
 </div>

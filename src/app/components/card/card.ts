@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { CategoryItems } from '../../models/models';
 
 @Component({
   selector: 'app-card',
@@ -9,12 +10,13 @@ import { CardModule } from 'primeng/card';
   styleUrl: './card.scss',
 })
 export class Card {
-  cardImage = input<string>('');
-  cardTitle = input<string>('Card Title');
-  cardSubtitle = input<string>('Card Subtitle');
-  cardBody =
-    input<string>(`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error
-      repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa
-      ratione quam perferendis esse, cupiditate neque quas!`);
-  showFooter = false;
+  cardData = input<CategoryItems>({
+    id: 'loose-equal',
+    link: '',
+    name: 'Equality',
+    code: '',
+    example: '',
+    output: '',
+    bullets: ['Dart does not support type coercion'],
+  });
 }

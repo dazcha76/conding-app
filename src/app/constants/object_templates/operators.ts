@@ -5,11 +5,11 @@ import { Category } from '../../models/models';
 export const LANGUAGE_OPERATORS: Record<string, Category> = {
   equality: {
     title: 'Equality and relational operators',
-    documentation: '',
+    link: '',
     items: {
       'loose-equal': {
         id: 'loose-equal',
-        documentation: '',
+        link: '',
         name: '',
         code: '',
         example: '',
@@ -18,7 +18,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
       },
       'strict-equal': {
         id: 'strict-equal',
-        documentation: '',
+        link: '',
         name: '',
         code: '',
         example: '',
@@ -27,7 +27,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
       },
       'loose-not-equal': {
         id: 'loose-not-equal',
-        documentation: '',
+        link: '',
         name: '',
         code: '',
         example: '',
@@ -36,7 +36,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
       },
       'strict-not-equal': {
         id: 'strict-not-equal',
-        documentation: '',
+        link: '',
         name: '',
         code: '',
         example: '',
@@ -45,7 +45,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
       },
       'greater-than': {
         id: 'greater-than',
-        documentation: '',
+        link: '',
         name: '',
         code: '',
         example: '',
@@ -54,7 +54,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
       },
       'less-than': {
         id: 'less-than',
-        documentation: '',
+        link: '',
         name: '',
         code: '',
         example: '',
@@ -63,7 +63,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
       },
       'greater-or-equal': {
         id: 'greater-or-equal',
-        documentation: '',
+        link: '',
         name: '',
         code: '',
         example: '',
@@ -72,7 +72,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
       },
       'less-or-equal': {
         id: 'less-or-equal',
-        documentation: '',
+        link: '',
         name: '',
         code: '',
         example: '',
@@ -83,11 +83,11 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
   },
   logical: {
     title: 'Logical operators',
-    documentation: '',
+    link: '',
     items: {
       not: {
         id: 'not',
-        documentation: '',
+        link: '',
         name: '',
         code: '',
         example: '',
@@ -96,7 +96,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
       },
       or: {
         id: 'or',
-        documentation: '',
+        link: '',
         name: '',
         code: '',
         example: '',
@@ -105,7 +105,7 @@ export const LANGUAGE_OPERATORS: Record<string, Category> = {
       },
       and: {
         id: 'and',
-        documentation: '',
+        link: '',
         name: '',
         code: '',
         example: '',

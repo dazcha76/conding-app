@@ -5,13 +5,13 @@ export interface Options {
 
 export interface Category {
   title: string;
-  documentation: string;
+  link: string;
   items: Record<string, CategoryItems>;
 }
 
 export interface CategoryItems {
   id: string;
-  documentation: string;
+  link: string;
   name: string;
   code: string;
   example: string;

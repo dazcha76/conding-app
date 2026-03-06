@@ -6,7 +6,7 @@ import { Card } from '../../components/card/card';
 import { Dropdown } from '../../components/dropdown/dropdown';
 import { TOPICS } from '../../constants/options';
 import { FRONTEND_STACK } from '../../constants/languages/frontend';
-import { Options } from '../../models/models';
+import { CategoryItems, Options } from '../../models/models';
 import { DART_OPERATORS } from '../../constants/dart/operators';
 
 @Component({
@@ -22,9 +22,15 @@ export class Learn {
   selectedSubtopic = signal<string>('');
   selectedItem = signal<string>('');
 
-  cardTitle = signal<string>('');
-  cardSubTitle = signal<string>('');
-  cardBody = signal<string>('');
+  cardData = signal<CategoryItems>({
+    id: 'loose-equal',
+    link: '',
+    name: 'Equality',
+    code: '',
+    example: '',
+    output: '',
+    bullets: ['Dart does not support type coercion'],
+  });
 
   languageOptions = signal(
     FRONTEND_STACK.map((language) => ({ code: language.id, name: language.name })),
@@ -93,8 +99,6 @@ export class Learn {
     this.selectedItem.set(event);
     const item = DART_OPERATORS[this.selectedSubtopic()].items[this.selectedItem()];
 
-    this.cardTitle.set(item.name);
-    this.cardSubTitle.set('');
-    this.cardBody.set(item.code);
+    this.cardData.set(item);
   }
 }
