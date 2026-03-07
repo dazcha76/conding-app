@@ -9,19 +9,41 @@
     <app-button [options]="frameworkOptions()" (selectedButton)="onSelectFramework($event)" />
   } -->
 
-  @if (selectedLanguage()) {
-    <app-dropdown [options]="topicOptions" (selectedOption)="onSelectTopic($event)" />
-  }
+  <div class="flex-container">
+    <div class="flex-item">
+      @if (selectedLanguage()) {
+        <app-dropdown
+          [options]="topicOptions"
+          [placeholder]="'Select a category:'"
+          (selectedOption)="onSelectTopic($event)"
+        />
+      }
+    </div>
 
-  @if (selectedTopic()) {
-    <app-dropdown [options]="subTopicOptions()" (selectedOption)="onSelectSubTopic($event)" />
-  }
+    <div class="flex-item">
+      @if (selectedTopic()) {
+        <app-dropdown
+          [options]="subTopicOptions()"
+          [placeholder]="'Select a sub-category:'"
+          (selectedOption)="onSelectSubTopic($event)"
+        />
+      }
+    </div>
 
-  @if (selectedSubTopic()) {
-    <app-dropdown [options]="itemOptions()" (selectedOption)="onSelectItem($event)" />
-  }
+    <div class="flex-item">
+      @if (selectedSubTopic()) {
+        <app-dropdown
+          [options]="itemOptions()"
+          [placeholder]="'Select an item:'"
+          (selectedOption)="onSelectItem($event)"
+        />
+      }
+    </div>
+  </div>
 
-  @if (selectedItem()) {
-    <app-card [cardData]="cardData()" />
-  }
+  <div class="flex-container">
+    @if (selectedItem()) {
+      <app-card class="flex-item" [cardData]="cardData()" />
+    }
+  </div>
 </div>

@@ -1,12 +1,19 @@
-<div class="mb-4 flex items-center justify-center">
-  <p-card class="border" [style]="{ width: '25rem', overflow: 'hidden' }">
+<div class="flex flex-wrap gap-4 justify-center">
+  <p-card
+    class="border overflow-hidden flex-1"
+    [style]="{
+      flex: '1 1 300px',
+      'max-width': 'calc(50% - 0.5rem)',
+      'min-width': 'min(300px, 100%)',
+    }"
+  >
     <ng-template #title> {{ cardData().name }} </ng-template>
 
     <div class="row-layout">
       <div class="row-layout border code-block">
         <pre><code>{{ cardData().code }}</code></pre>
 
-        <div class="two-column-layout">
+        <div class="flex-container">
           <p>{{ cardData().example }}</p>
           <p>{{ cardData().output }}</p>
         </div>

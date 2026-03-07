@@ -2,7 +2,7 @@
   <p-select
     [options]="options()"
     optionLabel="name"
-    placeholder="Select a Category"
+    [placeholder]="placeholder()"
     class="w-full md:w-56"
     (onChange)="onSelect($event)"
     [showClear]="true"

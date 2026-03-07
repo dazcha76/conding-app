@@ -14,6 +14,7 @@ interface Options {
 })
 export class Dropdown {
   options = input<Options[] | null>([]);
+  placeholder = input<string>('');
   selectedOption = output<string>();
 
   onSelect(event: SelectChangeEvent) {
